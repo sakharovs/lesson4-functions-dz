@@ -40,6 +40,7 @@ account_balance = 0
 purchases = {}
 
 while True:
+    balance_msg(f'Ваш баланс {account_balance} ед.')
     print('1. пополнение счета')
     print('2. покупка')
     print('3. история покупок')

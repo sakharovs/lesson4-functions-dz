@@ -15,7 +15,8 @@ def simple_separator():
     return '*' * 10
 
 
-print('return from simple_separator func \n', simple_separator())
+if __name__ == '__main__':
+    print('return from simple_separator func \n', simple_separator())
 
 
 def long_separator(count):
@@ -30,7 +31,8 @@ def long_separator(count):
     return print(' <=== return from long_separator func')
 
 
-long_separator(50)
+if __name__ == '__main__':
+    long_separator(50)
 
 
 # print(long_separator(3) == '***')  # True
@@ -50,7 +52,8 @@ def separator(simbol, count):
     return print('\n')
 
 
-separator('#', 50)
+if __name__ == '__main__':
+    separator('#', 50)
 
 
 # print(separator('-', 10) == '----------')  # True
@@ -79,7 +82,8 @@ Hello World!
 
 ##########
 '''
-hello_world()
+if __name__ == '__main__':
+    hello_world()
 
 
 def hello_who(who='World'):
@@ -123,7 +127,8 @@ Hello World!
 
 ##########
 '''
-hello_who()
+if __name__ == '__main__':
+    hello_who()
 '''
 **********
 
@@ -131,7 +136,8 @@ Hello Max!
 
 ##########
 '''
-hello_who('Max')
+if __name__ == '__main__':
+    hello_who('Max')
 '''
 **********
 
@@ -139,7 +145,8 @@ Hello Kate!
 
 ##########
 '''
-hello_who('Kate')
+if __name__ == '__main__':
+    hello_who('Kate')
 
 
 def pow_many(power, *args):
@@ -156,11 +163,12 @@ def pow_many(power, *args):
     return result
 
 
-print(pow_many(1, 1, 2))  # == 3)  True -> (1 + 2)**1 == 3
-print(pow_many(1, 2, 3))  # == 5)   True -> (2 + 3)**1 == 5
-print(pow_many(2, 1, 1))  # == 4)  # True -> (1 + 1)**2 == 4
-print(pow_many(3, 2))  # == 8)  # True -> 2**3 == 8
-print(pow_many(2, 1, 2, 3, 4))  # == 100)  # True -> (1 + 2 + 3 + 4)**2 == 10**2 == 100
+if __name__ == '__main__':
+    print(pow_many(1, 1, 2))  # == 3)  True -> (1 + 2)**1 == 3
+    print(pow_many(1, 2, 3))  # == 5)   True -> (2 + 3)**1 == 5
+    print(pow_many(2, 1, 1))  # == 4)  # True -> (1 + 1)**2 == 4
+    print(pow_many(3, 2))  # == 8)  # True -> 2**3 == 8
+    print(pow_many(2, 1, 2, 3, 4))  # == 100)  # True -> (1 + 2 + 3 + 4)**2 == 10**2 == 100
 
 
 def print_key_val(**kwargs):
@@ -175,16 +183,17 @@ def print_key_val(**kwargs):
         print(f'{key} --> {val}')
 
 
-"""
-name --> Max
-age --> 21
-"""
-print_key_val(name='Max', age=21)
-"""
-animal --> Cat
-is_animal --> True
-"""
-print_key_val(animal='Cat', is_animal=True)
+if __name__ == '__main__':
+    """
+    name --> Max
+    age --> 21
+    """
+    print_key_val(name='Max', age=21)
+    """
+    animal --> Cat
+    is_animal --> True
+    """
+    print_key_val(animal='Cat', is_animal=True)
 
 
 def my_filter(iterable, function):
@@ -204,7 +213,8 @@ def my_filter(iterable, function):
     return result
 
 
-print(my_filter([1, 2, 3, 4, 5], lambda x: x > 3) == [4, 5])  # True
-print(my_filter([1, 2, 3, 4, 5], lambda x: x == 2) == [2])  # True
-print(my_filter([1, 2, 3, 4, 5], lambda x: x != 3) == [1, 2, 4, 5])  # True
-print(my_filter(['a', 'b', 'c', 'd'], lambda x: x in 'abba') == ['a', 'b'])  # True
+if __name__ == '__main__':
+    print(my_filter([1, 2, 3, 4, 5], lambda x: x > 3) == [4, 5])  # True
+    print(my_filter([1, 2, 3, 4, 5], lambda x: x == 2) == [2])  # True
+    print(my_filter([1, 2, 3, 4, 5], lambda x: x != 3) == [1, 2, 4, 5])  # True
+    print(my_filter(['a', 'b', 'c', 'd'], lambda x: x in 'abba') == ['a', 'b'])  # True
