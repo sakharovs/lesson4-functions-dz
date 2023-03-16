@@ -11,7 +11,7 @@
 
 1. пополнение счета
 при выборе этого пункта пользователю предлагается ввести сумму на сколько пополнить счет
-после того как пользователь вводит сумму она добавляется к счету
+после того как пользователь вводит сумму, она добавляется к счету
 снова попадаем в основное меню
 
 2. покупка
@@ -34,20 +34,38 @@
 Для реализации основного меню можно использовать пример ниже или написать свой
 """
 
+from myfunctions import attention_msg, balance_msg
+
+account_balance = 0
+purchases = {}
+
 while True:
     print('1. пополнение счета')
     print('2. покупка')
     print('3. история покупок')
     print('4. выход')
+    print('0. Показать баланс')
 
-    choice = input('Выберите пункт меню')
+    choice = input('Выберите пункт меню ')
     if choice == '1':
-        pass
+        new_sum = int(input('Введите сумму для пополнения баланса '))
+        if new_sum < 0:
+            attention_msg('Сумма пополнения не может быть меньше нуля!')
+        else:
+            account_balance += new_sum
     elif choice == '2':
-        pass
+        cost = int(input('Введите сумму покупки: '))
+        if cost > account_balance:
+            attention_msg('Не хватает единиц для покупки!')
+        else:
+            purchase_name = input('Введите наименование покупки: ')
+            purchases[purchase_name] = cost
+            account_balance -= cost
     elif choice == '3':
-        pass
+        print(purchases)
     elif choice == '4':
         break
+    elif choice == '0':
+        balance_msg(f'Ваш баланс {account_balance} ед.')
     else:
-        print('Неверный пункт меню')
+        attention_msg('Неверный пункт меню')

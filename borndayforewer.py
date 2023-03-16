@@ -20,42 +20,14 @@ def correct_birthday(pers, c_day, c_year):
     p_year = input(f'Введите год рождения {pers}: ')
     while p_year != c_year:
         print("Не верно")
-        p_year = input(f'Введите год рождения {pers}: ')
+        p_year = input(f'Еще попытка! Год рождения {pers}: ')
 
-        p_day = input(f'Введите день рождения {pers}: ')
+    p_day = input(f'Ок, а теперь введите день рождения {pers}: ')
     while p_day != c_day:
         print("Не верно")
         p_day = input(f'В какой день месяца родился {pers}? ')
     print('Верно')
-    return p_year, p_day
-
-
-def month_2_word(num_month):
-    if num_month == '01':
-        w_month = 'января'
-    elif num_month == '02':
-        w_month = 'февраля'
-    elif num_month == '03':
-        w_month = 'марта'
-    elif num_month == '04':
-        w_month = 'апреля'
-    elif num_month == '05':
-        w_month = 'мая'
-    elif num_month == '06':
-        w_month = 'июня'
-    elif num_month == '07':
-        w_month = 'июля'
-    elif num_month == '08':
-        w_month = 'августа'
-    elif num_month == '09':
-        w_month = 'сентября'
-    elif num_month == '10':
-        w_month = 'октября'
-    elif num_month == '11':
-        w_month = 'ноября'
-    else:
-        w_month = 'декабря'
-    return w_month
+    #return p_year, p_day
 
 
 birthdays_dict = {'Александр Пушкин': '06.06.1799',
@@ -80,27 +52,7 @@ day_name = ["первое", "второе", "третье", "четвертое"
 
 days = dict(zip(day_number, day_name))
 
-# Выбираем жертву
-random_person = random.choice(list(birthdays_dict.keys()))
-birthday = birthdays_dict[random_person]
-print(birthday[:2], birthday[6:])
+random_person = random.choice(list(birthdays_dict.keys())) # Выбираем жертву
+birthday = birthdays_dict[random_person] # Определяем ДР
+# print(birthday[:2], birthday[6:]) это подсказка, если раскомментировать
 correct_birthday(random_person, birthday[:2], birthday[6:])
-
-# correct_answers = 0
-# for person in random_people:
-#     # Получаем дату рождения для выбранных жертв
-#     birthday = birthdays_dict[person]
-#     # Предлагаем пользователю угадать дату рождения
-#     answer = input(f"Введите дату рождения для {person}: ")
-#     # Проверяем ответ
-#     if answer == birthday:
-#         print("Правильно!")
-#         correct_answers += 1
-#     else:
-#         month = month_2_word(birthday[3:5])
-#
-#         print(
-#             f"Неправильно. Правильный ответ: {days[birthday[:2]]} {month} {birthday[6:]} года.")
-#         print()
-#
-# print(f"Вы правильно ответили на {correct_answers} вопросов из {qty_questions}.")

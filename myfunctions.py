@@ -47,7 +47,7 @@ def separator(simbol, count):
     for i in range(count):
         print(simbol, end='')
         i += 1
-    return print(' <=== return from separator func\n')
+    return print('\n')
 
 
 separator('#', 50)
@@ -93,9 +93,27 @@ def hello_who(who='World'):
     :param who: кого мы приветствуем, по умолчанию World
     :return: None
     """
-    separator('/', 100)
+    separator('/', 50)
     print(f'Hello  {who} \n ')
-    separator('\\', 100)
+    separator('\\', 50)
+
+
+def attention_msg(msg_text):
+    separator('!', 50)
+    print(f'{msg_text}\n')
+    separator('!', 50)
+
+
+def balance_msg(msg_text):
+    separator('#', 20)
+    print(msg_text, '\n')
+    separator('#', 20)
+
+
+def purchase_list(msg_text):
+    separator('|', 30)
+    print(msg_text)
+    separator('|', 30)
 
 
 '''
